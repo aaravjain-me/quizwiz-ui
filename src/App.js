@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import './pages/r/RegistrationForm.css';
+import React from 'react';
+import Light from './assets/light-bulb.jpg';
+import { Link } from 'react-router-dom';
 
-function App() {
+
+function Login() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <img src={Light} alt='light bulb' />{/*make the imported image appear*/}
+      <InformationNote />
+      <div className='registration'>
+        <form>
+          <div>
+            <label htmlFor='password'>Enter your password:</label>
+            <br />
+            <input type='password' name='password' id='password' />
+          </div>
+          <Link to='./pages/about/About'>Know more...</Link>{/*link to that page*/}
+          <br />
+          <button type='submit'>Login</button>
+        </form>
+      </div>
+      <p>Didn't register for quizwiz</p>
+      <Link to='./pages/r/RegistrationForm'>Register Now</Link>{/*link to that page*/}
+      <img src={Light} alt='light bulb 2' />{/*make the imported image appear*/}
+    </>
+  )
 }
 
-export default App;
+export default Login;

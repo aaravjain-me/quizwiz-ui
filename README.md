@@ -1,6 +1,6 @@
-# React Quiz App
+# quizwiz
 
-Welcome to the React Quiz App project! This application allows students to take multiple-choice quizzes and receive scores based on their responses.
+Welcome to the quizwiz project! This application allows students to take multiple-choice quizzes and receive scores based on their responses.
 
 ## Features
 
@@ -11,7 +11,7 @@ Welcome to the React Quiz App project! This application allows students to take 
 
 ## Getting Started
 
-To run the React Quiz App locally on your machine, follow these steps:
+To run the Quizwiz App locally on your machine, follow these steps:
 
 1. **Clone the Repository:**
 git clone https://github.com/aaravjain-me/quizwiz-ui.git
@@ -36,7 +36,7 @@ Open your web browser and navigate to `http://localhost:3000` to access the Reac
 
 ## Contributing
 
-Contributions to the React Quiz App project are welcome! If you'd like to contribute, please follow these guidelines:
+Contributions to quizwiz project are welcome! If you'd like to contribute, please follow these guidelines:
 
 1. Fork the repository and create your branch from `main`.
 2. Make your changes and ensure the code passes any existing tests.

@@ -1,0 +1,31 @@
+.main {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background-color: #a8a3a3;
+}
+
+.registration {
+    background-color: white;
+    width: 60vw;
+    height: 80vh;
+}
+
+img {
+    height: 10vh;
+    width: 5vh;
+    margin: 10vh;
+}
+
+button {
+    width: 50vw;
+    height: 20vh;
+    color: white;
+    background-color: blue;
+}
+
+input {
+    border-color: black; /* Change the border color to black */
+}
