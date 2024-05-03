@@ -4,7 +4,7 @@ import Light from './assets/light-bulb.jpg';
 import { Link } from 'react-router-dom';
 
 
-function Login() {
+function App() {
   return (
     <>
       <img src={Light} alt='light bulb' />{/*make the imported image appear*/}
@@ -28,4 +28,4 @@ function Login() {
   )
 }
 
-export default Login;
+export default App;
