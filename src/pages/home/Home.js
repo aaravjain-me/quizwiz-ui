@@ -26,38 +26,38 @@ function Home() {
                         <table>
                             <tbody>
                                 <tr>
-                                    <td>Easy To Use system</td>
-                                    <td>
+                                    <td id="2">Easy To Use system</td>
+                                    <td id="7">
                                         <img src={EasyToUse} alt="Show icon for easy to use" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Quick Responses</td>
-                                    <td>
+                                    <td id="1">Quick Responses</td>
+                                    <td id="8">
                                         <img src={QuickResponses} alt="Show icon for quick responses" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Free Of Cost</td>
-                                    <td>
+                                    <td id="3">Free Of Cost</td>
+                                    <td id="9">
                                         <img src={FreeOfCost} alt="Show icon for free of cost" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Frequent Updates</td>
-                                    <td>
+                                    <td id="4">Frequent Updates</td>
+                                    <td id="10">
                                         <img src={FrequentUpdates} alt="Show icon for frequent updates" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Open For All</td>
-                                    <td>
+                                    <td id="5">Open For All</td>
+                                    <td id="11">
                                         <img src={OpenForAll} alt="Show icon for open for all" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Responsiveness</td>
-                                    <td>
+                                    <td id="6">Responsiveness</td>
+                                    <td id="12">
                                         <img src={Responsiveness} alt="Show icon for responsiveness" />
                                     </td>
                                 </tr>
