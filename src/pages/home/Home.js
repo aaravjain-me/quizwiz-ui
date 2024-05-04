@@ -13,9 +13,10 @@ import "./Home.css";
 function Home() {
     return (
         <>
-            <header>
+            <header></header>
+            <nav>
                 <NavigationBar />
-            </header>
+            </nav>
             <main>
                 <h1>Hello dear user <br /> Welcome to quizwiz!</h1>
                 <div>
@@ -64,7 +65,16 @@ function Home() {
                         </table>
                     </div>
                 </div>
+                <div className="What">
+                    <h1>What's new</h1>
+                    <div>
+                        <p>Nothing new right now</p>
+                    </div>
+                </div>
             </main>
         </>
     )
 }
+
+
+export default Home;
