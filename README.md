@@ -26,7 +26,7 @@ npm install
 npm start
 
 5. **Access the App:**
-Open your web browser and navigate to `http://localhost:3000` to access the React Quiz App.
+Open your web browser and navigate to `http://localhost:3000` to access the quizwiz App.
 
 ## Usage
 
@@ -46,6 +46,6 @@ Contributions to quizwiz project are welcome! If you'd like to contribute, pleas
 
 ## Contact
 
-If you have any questions or suggestions regarding the React Quiz App project, feel free to contact us at [aaravjain.me@gmail.com](aaravjain.me@gmail.com).
+If you have any questions or suggestions regarding the quizwiz App project, feel free to contact us at [aaravjain.me@gmail.com](aaravjain.me@gmail.com).
 
 
