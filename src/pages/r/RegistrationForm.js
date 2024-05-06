@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 
 function RegistrationForm() {
   const register = () => {
-    
-  }
+    const email = document.getElementById('email');
+  };
 
   return (
     <div className='main'>

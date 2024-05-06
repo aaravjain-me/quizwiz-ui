@@ -71,6 +71,7 @@ function Home() {
                         <p>Nothing new right now</p>
                     </div>
                 </div>
+                <button>Start the quiz</button>
             </main>
         </>
     )
