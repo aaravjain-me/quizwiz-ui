@@ -17,6 +17,13 @@ button {
   height: 10vh;
   color: white;
   background-color: blue;
+  border: 2px;
+  border-color: black;
+}
+
+button:hover {
+  color: black;
+  background-color: white;
 }
 
 input {
