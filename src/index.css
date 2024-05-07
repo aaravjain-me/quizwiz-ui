@@ -12,4 +12,14 @@ code {
     monospace;
 }
 
+button {
+  width: 25vw;
+  height: 10vh;
+  color: white;
+  background-color: blue;
+}
 
+input {
+  border: 2px;
+  border-color: black;
+}
