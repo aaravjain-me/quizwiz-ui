@@ -11,7 +11,7 @@ function NavigationBar() {
         setDropdownVisible(!dropdownVisible);
     }
 
-    // Use hook for subject menu 1
+    // Set and use hooks for subjects
     const [subjectMenu1, setSubjectMenu1] = React.useState(false);
 
     const ss1 = () => {
@@ -47,6 +47,16 @@ function NavigationBar() {
                     <button>Class 9</button>
                     <br />
                     <button>Class 10</button>
+                    {/* Display defined hooks based on boolean values */}
+                    {subjectMenu1 && (
+                        <div className="ss1">
+                            <Link to="#">Math</Link>
+                            <Link to="#">Science</Link>
+                            <Link to="#">Computers</Link>
+                            <Link to="#">English</Link>
+                            <Link to="#">General knowledge</Link>
+                        </div>
+                    )}
                 </div>
             )}
         </>
