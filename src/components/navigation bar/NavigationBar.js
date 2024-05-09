@@ -14,9 +14,24 @@ function NavigationBar() {
     // Set and use hooks for subjects
     const [subjectMenu1, setSubjectMenu1] = React.useState(false);
 
-    const ss1 = () => {
-        setSubjectMenu1(!subjectMenu1);
-    }
+    const [subjectMenu2, setSubjectMenu2] = React.useState(false);
+
+    const [subjectMenu3, setSubjectMenu3] = React.useState(false);
+
+    const [subjectMenu4, setSubjectMenu4] = React.useState(false);
+
+    const [subjectMenu5, setSubjectMenu5] = React.useState(false);
+
+    const [subjectMenu6, setSubjectMenu6] = React.useState(false);
+
+    const [subjectMenu7, setSubjectMenu7] = React.useState(false);
+
+    const [subjectMenu8, setSubjectMenu8] = React.useState(false);
+
+    const [subjectMenu9, setSubjectMenu9] = React.useState(false);
+
+    const [subjectMenu10, setSubjectMenu10] = React.useState(false);
+
 
     return (
         <>
