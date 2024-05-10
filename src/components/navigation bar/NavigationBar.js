@@ -12,26 +12,40 @@ function NavigationBar() {
     }
 
     // Set and use hooks for subjects
-    const [subjectMenu1, setSubjectMenu1] = React.useState(false);
+    const [subjectMenus, setSubjectMenus] = React.useState({
+        subjectMenu1: false,
+        subjectMenu2: false,
+        subjectMenu3: false,
+        subjectMenu4: false,
+        subjectMenu5: false,
+        subjectMenu6: false,
+        subjectMenu7: false,
+        subjectMenu8: false,
+        subjectMenu9: false,
+        subjectMenu10: false
+    })
 
-    const [subjectMenu2, setSubjectMenu2] = React.useState(false);
+    const closeAllSubjectMenus = () => {
+        setSubjectMenus({
+            subjectMenu1: false,
+            subjectMenu2: false,
+            subjectMenu3: false,
+            subjectMenu4: false,
+            subjectMenu5: false,
+            subjectMenu6: false,
+            subjectMenu7: false,
+            subjectMenu8: false,
+            subjectMenu9: false,
+            subjectMenu10: false
+        })
+    }
 
-    const [subjectMenu3, setSubjectMenu3] = React.useState(false);
-
-    const [subjectMenu4, setSubjectMenu4] = React.useState(false);
-
-    const [subjectMenu5, setSubjectMenu5] = React.useState(false);
-
-    const [subjectMenu6, setSubjectMenu6] = React.useState(false);
-
-    const [subjectMenu7, setSubjectMenu7] = React.useState(false);
-
-    const [subjectMenu8, setSubjectMenu8] = React.useState(false);
-
-    const [subjectMenu9, setSubjectMenu9] = React.useState(false);
-
-    const [subjectMenu10, setSubjectMenu10] = React.useState(false);
-
+    const toggleSubjectMenu = (subjectMenu) => {
+        setSubjectMenus((prevMenus) => ({
+            ...prevMenus,
+            [subjectMenu]: !prevMenus[subjectMenu]
+        }))
+    }   
 
     return (
         <>
@@ -63,7 +77,7 @@ function NavigationBar() {
                     <br />
                     <button>Class 10</button>
                     {/* Display defined hooks based on boolean values */}
-                    {subjectMenu1 && (
+                    {subjectMenus && (
                         <div className="ss1">
                             <Link to="#">Math</Link>
                             <Link to="#">Science</Link>
