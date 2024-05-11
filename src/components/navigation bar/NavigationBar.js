@@ -25,6 +25,13 @@ function NavigationBar() {
         subjectMenu10: false
     })
 
+    const toggleSubjectMenu = (subjectMenu) => {
+        setSubjectMenus((prevMenus) => ({
+            ...prevMenus,
+            [subjectMenu]: !prevMenus[subjectMenu]
+        }))
+    }
+
     const closeAllSubjectMenus = () => {
         setSubjectMenus({
             subjectMenu1: false,
@@ -39,17 +46,135 @@ function NavigationBar() {
             subjectMenu10: false
         })
     }
-
-    const toggleSubjectMenu = (subjectMenu) => {
-        setSubjectMenus((prevMenus) => ({
-            ...prevMenus,
-            [subjectMenu]: !prevMenus[subjectMenu]
-        }))
-    }
     
     const toggleSubjectMenu1 = () => {
-        closeAllSubjectMenus();
-        toggleSubjectMenu("subjectMenu1");
+        if (subjectMenus.subjectMenu2 || subjectMenus.subjectMenu3
+            || subjectMenus.subjectMenu4 || subjectMenus.subjectMenu5 || subjectMenus.subjectMenu6
+            || subjectMenus.subjectMenu7 || subjectMenus.subjectMenu8 || subjectMenus.subjectMenu9
+            || subjectMenus.subjectMenu10
+        ) {
+           closeAllSubjectMenus();
+           toggleSubjectMenu("subjectMenu1"); 
+        } else {
+            toggleSubjectMenu("subjectMenu1"); 
+        }
+    }
+    
+    const toggleSubjectMenu2 = () => {
+        if (subjectMenus.subjectMenu1 || subjectMenus.subjectMenu3
+            || subjectMenus.subjectMenu4 || subjectMenus.subjectMenu5 || subjectMenus.subjectMenu6
+            || subjectMenus.subjectMenu7 || subjectMenus.subjectMenu8 || subjectMenus.subjectMenu9
+            || subjectMenus.subjectMenu10
+        ) {
+           closeAllSubjectMenus();
+           toggleSubjectMenu("subjectMenu2"); 
+        } else {
+            toggleSubjectMenu("subjectMenu2"); 
+        }
+    }
+
+    const toggleSubjectMenu3 = () => {
+        if (subjectMenus.subjectMenu2 || subjectMenus.subjectMenu1
+            || subjectMenus.subjectMenu4 || subjectMenus.subjectMenu5 || subjectMenus.subjectMenu6
+            || subjectMenus.subjectMenu7 || subjectMenus.subjectMenu8 || subjectMenus.subjectMenu9
+            || subjectMenus.subjectMenu10
+        ) {
+           closeAllSubjectMenus();
+           toggleSubjectMenu("subjectMenu3"); 
+        } else {
+            toggleSubjectMenu("subjectMenu3"); 
+        }
+    }
+
+    const toggleSubjectMenu4 = () => {
+        if (subjectMenus.subjectMenu2 || subjectMenus.subjectMenu3
+            || subjectMenus.subjectMenu1 || subjectMenus.subjectMenu5 || subjectMenus.subjectMenu6
+            || subjectMenus.subjectMenu7 || subjectMenus.subjectMenu8 || subjectMenus.subjectMenu9
+            || subjectMenus.subjectMenu10
+        ) {
+           closeAllSubjectMenus();
+           toggleSubjectMenu("subjectMenu4"); 
+        } else {
+            toggleSubjectMenu("subjectMenu4"); 
+        }
+    }
+
+    const toggleSubjectMenu5 = () => {
+        if (subjectMenus.subjectMenu2 || subjectMenus.subjectMenu3
+            || subjectMenus.subjectMenu4 || subjectMenus.subjectMenu1 || subjectMenus.subjectMenu6
+            || subjectMenus.subjectMenu7 || subjectMenus.subjectMenu8 || subjectMenus.subjectMenu9
+            || subjectMenus.subjectMenu10
+        ) {
+           closeAllSubjectMenus();
+           toggleSubjectMenu("subjectMenu5"); 
+        } else {
+            toggleSubjectMenu("subjectMenu5"); 
+        }
+    }
+
+    const toggleSubjectMenu6 = () => {
+        if (subjectMenus.subjectMenu2 || subjectMenus.subjectMenu3
+            || subjectMenus.subjectMenu4 || subjectMenus.subjectMenu5 || subjectMenus.subjectMenu1
+            || subjectMenus.subjectMenu7 || subjectMenus.subjectMenu8 || subjectMenus.subjectMenu9
+            || subjectMenus.subjectMenu10
+        ) {
+           closeAllSubjectMenus();
+           toggleSubjectMenu("subjectMenu6"); 
+        } else {
+            toggleSubjectMenu("subjectMenu6"); 
+        }
+    }
+
+    const toggleSubjectMenu7 = () => {
+        if (subjectMenus.subjectMenu2 || subjectMenus.subjectMenu3
+            || subjectMenus.subjectMenu4 || subjectMenus.subjectMenu5 || subjectMenus.subjectMenu6
+            || subjectMenus.subjectMenu1 || subjectMenus.subjectMenu8 || subjectMenus.subjectMenu9
+            || subjectMenus.subjectMenu10
+        ) {
+           closeAllSubjectMenus();
+           toggleSubjectMenu("subjectMenu7"); 
+        } else {
+            toggleSubjectMenu("subjectMenu7"); 
+        }
+    }
+
+    const toggleSubjectMenu8 = () => {
+        if (subjectMenus.subjectMenu2 || subjectMenus.subjectMenu3
+            || subjectMenus.subjectMenu4 || subjectMenus.subjectMenu5 || subjectMenus.subjectMenu6
+            || subjectMenus.subjectMenu7 || subjectMenus.subjectMenu1 || subjectMenus.subjectMenu9
+            || subjectMenus.subjectMenu10
+        ) {
+           closeAllSubjectMenus();
+           toggleSubjectMenu("subjectMenu8"); 
+        } else {
+            toggleSubjectMenu("subjectMenu8"); 
+        }
+    }
+
+    const toggleSubjectMenu9 = () => {
+        if (subjectMenus.subjectMenu2 || subjectMenus.subjectMenu3
+            || subjectMenus.subjectMenu4 || subjectMenus.subjectMenu5 || subjectMenus.subjectMenu6
+            || subjectMenus.subjectMenu7 || subjectMenus.subjectMenu8 || subjectMenus.subjectMenu1
+            || subjectMenus.subjectMenu10
+        ) {
+           closeAllSubjectMenus();
+           toggleSubjectMenu("subjectMenu9"); 
+        } else {
+            toggleSubjectMenu("subjectMenu9"); 
+        }
+    }
+
+    const toggleSubjectMenu10 = () => {
+        if (subjectMenus.subjectMenu2 || subjectMenus.subjectMenu3
+            || subjectMenus.subjectMenu4 || subjectMenus.subjectMenu5 || subjectMenus.subjectMenu6
+            || subjectMenus.subjectMenu7 || subjectMenus.subjectMenu8 || subjectMenus.subjectMenu9
+            || subjectMenus.subjectMenu1
+        ) {
+           closeAllSubjectMenus();
+           toggleSubjectMenu("subjectMenu10"); 
+        } else {
+            toggleSubjectMenu("subjectMenu10"); 
+        }
     }
 
     return (
@@ -62,33 +187,143 @@ function NavigationBar() {
             {/* Show the content based on boolean values */}
             {dropdownVisible && (
                 <div className="dropdown">
-                    <button>Class 1</button>
+                    <button onClick={toggleSubjectMenu1}>Class 1</button>
                     <br />
-                    <button>Class 2</button>
+                    <button onClick={toggleSubjectMenu2}>Class 2</button>
                     <br />
-                    <button>Class 3</button>
+                    <button onClick={toggleSubjectMenu3}>Class 3</button>
                     <br />
-                    <button>Class 4</button>
+                    <button onClick={toggleSubjectMenu4}>Class 4</button>
                     <br />
-                    <button>Class 5</button>
+                    <button onClick={toggleSubjectMenu5}>Class 5</button>
                     <br />
-                    <button>Class 6</button>
+                    <button onClick={toggleSubjectMenu6}>Class 6</button>
                     <br />
-                    <button>Class 7</button>
+                    <button onClick={toggleSubjectMenu7}>Class 7</button>
                     <br />
-                    <button>Class 8</button>
+                    <button onClick={toggleSubjectMenu8}>Class 8</button>
                     <br />
-                    <button>Class 9</button>
+                    <button onClick={toggleSubjectMenu9}>Class 9</button>
                     <br />
-                    <button>Class 10</button>
+                    <button onClick={toggleSubjectMenu10}>Class 10</button>
                     {/* Display defined hooks based on boolean values */}
-                    {subjectMenus && (
+                    {subjectMenus.subjectMenu1 && (
                         <div className="ss1">
                             <Link to="#">Math</Link>
                             <Link to="#">Science</Link>
                             <Link to="#">Computers</Link>
                             <Link to="#">English</Link>
                             <Link to="#">General knowledge</Link>
+                        </div>
+                    )}
+                    {subjectMenus.subjectMenu2 && (
+                        <div className="ss2">
+                            <Link to="#">Math</Link>
+                            <Link to="#">Science</Link>
+                            <Link to="#">Computers</Link>
+                            <Link to="#">English</Link>
+                            <Link to="#">General knowledge</Link>
+                            <Link to="#">Programming</Link>
+                        </div>
+                    )}
+                    {subjectMenus.subjectMenu3 && (
+                        <div className="ss3">
+                            <Link to="#">Math</Link>
+                            <Link to="#">Science</Link>
+                            <Link to="#">Computers</Link>
+                            <Link to="#">English</Link>
+                            <Link to="#">General knowledge</Link>
+                            <Link to="#">Programming</Link>
+                            <Link to="#">Social Science</Link>
+                        </div>
+                    )}
+                    {subjectMenus.subjectMenu4 && (
+                        <div className="ss4">
+                            <Link to="#">Math</Link>
+                            <Link to="#">Science</Link>
+                            <Link to="#">Computers</Link>
+                            <Link to="#">English</Link>
+                            <Link to="#">General knowledge</Link>
+                            <Link to="#">Programming</Link>
+                            <Link to="#">Social Science</Link>
+                            <Link to="#">Robotics</Link>
+                        </div>
+                    )}
+                    {subjectMenus.subjectMenu5 && (
+                        <div className="ss5">
+                            <Link to="#">Math</Link>
+                            <Link to="#">Science</Link>
+                            <Link to="#">Computers</Link>
+                            <Link to="#">English</Link>
+                            <Link to="#">General knowledge</Link>
+                            <Link to="#">Programming</Link>
+                            <Link to="#">Social Science</Link>
+                            <Link to="#">Robotics</Link>
+                        </div>
+                    )}
+                    {subjectMenus.subjectMenu6 && (
+                        <div className="ss6">
+                            <Link to="#">Math</Link>
+                            <Link to="#">Chemistry</Link>
+                            <Link to="#">Computers</Link>
+                            <Link to="#">English</Link>
+                            <Link to="#">General knowledge</Link>
+                            <Link to="#">Programming</Link>
+                            <Link to="#">Phisycs</Link>
+                            <Link to="#">Robotics</Link>
+                            <Link to="#">Biology</Link>
+                        </div>
+                    )}
+                    {subjectMenus.subjectMenu7 && (
+                        <div className="ss7">
+                            <Link to="#">Math</Link>
+                            <Link to="#">Chemistry</Link>
+                            <Link to="#">Computers</Link>
+                            <Link to="#">English</Link>
+                            <Link to="#">General knowledge</Link>
+                            <Link to="#">Programming</Link>
+                            <Link to="#">Phisycs</Link>
+                            <Link to="#">Robotics</Link>
+                            <Link to="#">Biology</Link>
+                        </div>
+                    )}
+                    {subjectMenus.subjectMenu8 && (
+                        <div className="ss8">
+                            <Link to="#">Math</Link>
+                            <Link to="#">Chemistry</Link>
+                            <Link to="#">Computers</Link>
+                            <Link to="#">English</Link>
+                            <Link to="#">General knowledge</Link>
+                            <Link to="#">Programming</Link>
+                            <Link to="#">Phisycs</Link>
+                            <Link to="#">Robotics</Link>
+                            <Link to="#">Biology</Link>
+                        </div>
+                    )}
+                    {subjectMenus.subjectMenu9 && (
+                        <div className="ss4">
+                            <Link to="#">Math</Link>
+                            <Link to="#">Chemistry</Link>
+                            <Link to="#">Computers</Link>
+                            <Link to="#">English</Link>
+                            <Link to="#">General knowledge</Link>
+                            <Link to="#">Programming</Link>
+                            <Link to="#">Phisycs</Link>
+                            <Link to="#">Robotics</Link>
+                            <Link to="#">Biology</Link>
+                        </div>
+                    )}
+                    {subjectMenus.subjectMenu10 && (
+                        <div className="ss4">
+                            <Link to="#">Math</Link>
+                            <Link to="#">Chemistry</Link>
+                            <Link to="#">Computers</Link>
+                            <Link to="#">English</Link>
+                            <Link to="#">General knowledge</Link>
+                            <Link to="#">Programming</Link>
+                            <Link to="#">Phisycs</Link>
+                            <Link to="#">Robotics</Link>
+                            <Link to="#">Biology</Link>
                         </div>
                     )}
                 </div>
