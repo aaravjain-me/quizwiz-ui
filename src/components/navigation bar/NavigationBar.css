@@ -3,3 +3,12 @@
     height: 10vh;
 }
 
+.ss1, .ss2, .ss3, .ss4, .ss5, .ss6, .ss7, .ss8, .ss9, .ss10 {
+    display: inline;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: blue;
+    height: 10vh;
+    width: 50vh;
+}

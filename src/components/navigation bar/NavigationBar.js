@@ -181,8 +181,8 @@ function NavigationBar() {
         <>
             <div className="navigation">
                 <button onClick={toggleDropdown}>Class</button>
-                <Link to="#">About</Link>
-                <Link to="#">Help</Link>
+                <Link to="#" style={{margin : '1px'}}>About</Link>
+                <Link to="#" style={{margin : '1px'}}>Help</Link>
             </div>
             {/* Show the content based on boolean values */}
             {dropdownVisible && (
@@ -209,112 +209,112 @@ function NavigationBar() {
                     {/* Display defined hooks based on boolean values */}
                     {subjectMenus.subjectMenu1 && (
                         <div className="ss1">
-                            <Link to="#">Math</Link>
-                            <Link to="#">Science</Link>
-                            <Link to="#">Computers</Link>
-                            <Link to="#">English</Link>
-                            <Link to="#">General knowledge</Link>
+                            <Link to="#" style={{margin : '1px'}}>Math</Link>
+                            <Link to="#" style={{margin : '1px'}}>Science</Link>
+                            <Link to="#" style={{margin : '1px'}}>Computers</Link>
+                            <Link to="#" style={{margin : '1px'}}>English</Link>
+                            <Link to="#" style={{margin : '1px'}}>General knowledge</Link>
                         </div>
                     )}
                     {subjectMenus.subjectMenu2 && (
                         <div className="ss2">
-                            <Link to="#">Math</Link>
-                            <Link to="#">Science</Link>
-                            <Link to="#">Computers</Link>
-                            <Link to="#">English</Link>
-                            <Link to="#">General knowledge</Link>
-                            <Link to="#">Programming</Link>
+                            <Link to="#" style={{margin : '1px'}}>Math</Link>
+                            <Link to="#" style={{margin : '1px'}}>Science</Link>
+                            <Link to="#" style={{margin : '1px'}}>Computers</Link>
+                            <Link to="#" style={{margin : '1px'}}>English</Link>
+                            <Link to="#" style={{margin : '1px'}}>General knowledge</Link>
+                            <Link to="#" style={{margin : '1px'}}>Programming</Link>
                         </div>
                     )}
                     {subjectMenus.subjectMenu3 && (
                         <div className="ss3">
-                            <Link to="#">Math</Link>
-                            <Link to="#">Science</Link>
-                            <Link to="#">Computers</Link>
-                            <Link to="#">English</Link>
-                            <Link to="#">General knowledge</Link>
-                            <Link to="#">Programming</Link>
-                            <Link to="#">Social Science</Link>
+                            <Link to="#" style={{margin : '1px'}}>Math</Link>
+                            <Link to="#" style={{margin : '1px'}}>Science</Link>
+                            <Link to="#" style={{margin : '1px'}}>Computers</Link>
+                            <Link to="#" style={{margin : '1px'}}>English</Link>
+                            <Link to="#" style={{margin : '1px'}}>General knowledge</Link>
+                            <Link to="#" style={{margin : '1px'}}>Programming</Link>
+                            <Link to="#" style={{margin : '1px'}}>Social Science</Link>
                         </div>
                     )}
                     {subjectMenus.subjectMenu4 && (
                         <div className="ss4">
-                            <Link to="#">Math</Link>
-                            <Link to="#">Science</Link>
-                            <Link to="#">Computers</Link>
-                            <Link to="#">English</Link>
-                            <Link to="#">General knowledge</Link>
-                            <Link to="#">Programming</Link>
-                            <Link to="#">Social Science</Link>
-                            <Link to="#">Robotics</Link>
+                            <Link to="#" style={{margin : '1px'}}>Math</Link>
+                            <Link to="#" style={{margin : '1px'}}>Science</Link>
+                            <Link to="#" style={{margin : '1px'}}>Computers</Link>
+                            <Link to="#" style={{margin : '1px'}}>English</Link>
+                            <Link to="#" style={{margin : '1px'}}>General knowledge</Link>
+                            <Link to="#" style={{margin : '1px'}}>Programming</Link>
+                            <Link to="#" style={{margin : '1px'}}>Social Science</Link>
+                            <Link to="#" style={{margin : '1px'}}>Robotics</Link>
                         </div>
                     )}
                     {subjectMenus.subjectMenu5 && (
                         <div className="ss5">
-                            <Link to="#">Math</Link>
-                            <Link to="#">Science</Link>
-                            <Link to="#">Computers</Link>
-                            <Link to="#">English</Link>
-                            <Link to="#">General knowledge</Link>
-                            <Link to="#">Programming</Link>
-                            <Link to="#">Social Science</Link>
-                            <Link to="#">Robotics</Link>
+                            <Link to="#" style={{margin : '1px'}}>Math</Link>
+                            <Link to="#" style={{margin : '1px'}}>Science</Link>
+                            <Link to="#" style={{margin : '1px'}}>Computers</Link>
+                            <Link to="#" style={{margin : '1px'}}>English</Link>
+                            <Link to="#" style={{margin : '1px'}}>General knowledge</Link>
+                            <Link to="#" style={{margin : '1px'}}>Programming</Link>
+                            <Link to="#" style={{margin : '1px'}}>Social Science</Link>
+                            <Link to="#" style={{margin : '1px'}}>Robotics</Link>
                         </div>
                     )}
                     {subjectMenus.subjectMenu6 && (
                         <div className="ss6">
-                            <Link to="#">Math</Link>
-                            <Link to="#">Chemistry</Link>
-                            <Link to="#">Computers</Link>
-                            <Link to="#">English</Link>
-                            <Link to="#">General knowledge</Link>
-                            <Link to="#">Programming</Link>
-                            <Link to="#">Phisycs</Link>
-                            <Link to="#">Robotics</Link>
-                            <Link to="#">Biology</Link>
+                            <Link to="#" style={{margin : '1px'}}>Math</Link>
+                            <Link to="#" style={{margin : '1px'}}>Chemistry</Link>
+                            <Link to="#" style={{margin : '1px'}}>Computers</Link>
+                            <Link to="#" style={{margin : '1px'}}>English</Link>
+                            <Link to="#" style={{margin : '1px'}}>General knowledge</Link>
+                            <Link to="#" style={{margin : '1px'}}>Programming</Link>
+                            <Link to="#" style={{margin : '1px'}}>Phisycs</Link>
+                            <Link to="#" style={{margin : '1px'}}>Robotics</Link>
+                            <Link to="#" style={{margin : '1px'}}>Biology</Link>
                         </div>
                     )}
                     {subjectMenus.subjectMenu7 && (
                         <div className="ss7">
-                            <Link to="#">Math</Link>
-                            <Link to="#">Chemistry</Link>
-                            <Link to="#">Computers</Link>
-                            <Link to="#">English</Link>
-                            <Link to="#">General knowledge</Link>
-                            <Link to="#">Programming</Link>
-                            <Link to="#">Phisycs</Link>
-                            <Link to="#">Robotics</Link>
-                            <Link to="#">Biology</Link>
+                            <Link to="#" style={{margin : '1px'}}>Math</Link>
+                            <Link to="#" style={{margin : '1px'}}>Chemistry</Link>
+                            <Link to="#" style={{margin : '1px'}}>Computers</Link>
+                            <Link to="#" style={{margin : '1px'}}>English</Link>
+                            <Link to="#" style={{margin : '1px'}}>General knowledge</Link>
+                            <Link to="#" style={{margin : '1px'}}>Programming</Link>
+                            <Link to="#" style={{margin : '1px'}}>Phisycs</Link>
+                            <Link to="#" style={{margin : '1px'}}>Robotics</Link>
+                            <Link to="#" style={{margin : '1px'}}>Biology</Link>
                         </div>
                     )}
                     {subjectMenus.subjectMenu8 && (
                         <div className="ss8">
-                            <Link to="#">Math</Link>
-                            <Link to="#">Chemistry</Link>
-                            <Link to="#">Computers</Link>
-                            <Link to="#">English</Link>
-                            <Link to="#">General knowledge</Link>
-                            <Link to="#">Programming</Link>
-                            <Link to="#">Phisycs</Link>
-                            <Link to="#">Robotics</Link>
-                            <Link to="#">Biology</Link>
+                            <Link to="#" style={{margin : '1px'}}>Math</Link>
+                            <Link to="#" style={{margin : '1px'}}>Chemistry</Link>
+                            <Link to="#" style={{margin : '1px'}}>Computers</Link>
+                            <Link to="#" style={{margin : '1px'}}>English</Link>
+                            <Link to="#" style={{margin : '1px'}}>General knowledge</Link>
+                            <Link to="#" style={{margin : '1px'}}>Programming</Link>
+                            <Link to="#" style={{margin : '1px'}}>Phisycs</Link>
+                            <Link to="#" style={{margin : '1px'}}>Robotics</Link>
+                            <Link to="#" style={{margin : '1px'}}>Biology</Link>
                         </div>
                     )}
                     {subjectMenus.subjectMenu9 && (
-                        <div className="ss4">
-                            <Link to="#">Math</Link>
-                            <Link to="#">Chemistry</Link>
-                            <Link to="#">Computers</Link>
-                            <Link to="#">English</Link>
-                            <Link to="#">General knowledge</Link>
-                            <Link to="#">Programming</Link>
-                            <Link to="#">Phisycs</Link>
-                            <Link to="#">Robotics</Link>
-                            <Link to="#">Biology</Link>
+                        <div className="ss9">
+                            <Link to="#" style={{margin : '1px'}}>Math</Link>
+                            <Link to="#" style={{margin : '1px'}}>Chemistry</Link>
+                            <Link to="#" style={{margin : '1px'}}>Computers</Link>
+                            <Link to="#" style={{margin : '1px'}}>English</Link>
+                            <Link to="#" style={{margin : '1px'}}>General knowledge</Link>
+                            <Link to="#" style={{margin : '1px'}}>Programming</Link>
+                            <Link to="#" style={{margin : '1px'}}>Phisycs</Link>
+                            <Link to="#" style={{margin : '1px'}}>Robotics</Link>
+                            <Link to="#" style={{margin : '1px'}}>Biology</Link>
                         </div>
                     )}
                     {subjectMenus.subjectMenu10 && (
-                        <div className="ss4">
+                        <div className="ss10">
                             <Link to="#">Math</Link>
                             <Link to="#">Chemistry</Link>
                             <Link to="#">Computers</Link>
