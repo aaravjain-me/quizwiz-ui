@@ -46,6 +46,8 @@ function NavigationBar() {
             subjectMenu10: false
         })
     }
+
+    // Conditionaly toggle the subject menus
     
     const toggleSubjectMenu1 = () => {
         if (subjectMenus.subjectMenu2 || subjectMenus.subjectMenu3
