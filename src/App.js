@@ -1,11 +1,11 @@
 import React from 'react';
 import NavigationBar from './components/navigation bar/NavigationBar';
-import 
+import NormalContent from './components/normal content/NormalContent';
 
 
 function App() {
   return (
-    
+    <NormalContent />
   )
 }
 
