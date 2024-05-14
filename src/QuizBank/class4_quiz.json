@@ -1,0 +1,227 @@
+{
+    "quizTitle": "Class 4 General Knowledge Quiz",
+    "timeLimit": 90,
+    "questions": [
+      {
+        "id": 1,
+        "question": "What is the capital of France?",
+        "options": [
+          "Berlin",
+          "Madrid",
+          "Paris",
+          "Rome"
+        ],
+        "correctAnswer": "Paris"
+      },
+      {
+        "id": 2,
+        "question": "Which planet is known as the Red Planet?",
+        "options": [
+          "Earth",
+          "Mars",
+          "Jupiter",
+          "Saturn"
+        ],
+        "correctAnswer": "Mars"
+      },
+      {
+        "id": 3,
+        "question": "What is the largest ocean on Earth?",
+        "options": [
+          "Atlantic Ocean",
+          "Indian Ocean",
+          "Arctic Ocean",
+          "Pacific Ocean"
+        ],
+        "correctAnswer": "Pacific Ocean"
+      },
+      {
+        "id": 4,
+        "question": "How many continents are there on Earth?",
+        "options": [
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "correctAnswer": "7"
+      },
+      {
+        "id": 5,
+        "question": "What is the boiling point of water?",
+        "options": [
+          "90°C",
+          "100°C",
+          "110°C",
+          "120°C"
+        ],
+        "correctAnswer": "100°C"
+      },
+      {
+        "id": 6,
+        "question": "Which is the longest river in the world?",
+        "options": [
+          "Nile",
+          "Amazon",
+          "Yangtze",
+          "Mississippi"
+        ],
+        "correctAnswer": "Nile"
+      },
+      {
+        "id": 7,
+        "question": "What is the smallest country in the world?",
+        "options": [
+          "Monaco",
+          "Nauru",
+          "San Marino",
+          "Vatican City"
+        ],
+        "correctAnswer": "Vatican City"
+      },
+      {
+        "id": 8,
+        "question": "Which is the largest desert in the world?",
+        "options": [
+          "Sahara Desert",
+          "Arabian Desert",
+          "Gobi Desert",
+          "Kalahari Desert"
+        ],
+        "correctAnswer": "Sahara Desert"
+      },
+      {
+        "id": 9,
+        "question": "Who wrote 'Harry Potter'?",
+        "options": [
+          "J.R.R. Tolkien",
+          "J.K. Rowling",
+          "George R.R. Martin",
+          "Stephen King"
+        ],
+        "correctAnswer": "J.K. Rowling"
+      },
+      {
+        "id": 10,
+        "question": "What is the smallest planet in our solar system?",
+        "options": [
+          "Venus",
+          "Mars",
+          "Mercury",
+          "Pluto"
+        ],
+        "correctAnswer": "Mercury"
+      },
+      {
+        "id": 11,
+        "question": "Which planet is known as the Morning Star?",
+        "options": [
+          "Venus",
+          "Mercury",
+          "Mars",
+          "Jupiter"
+        ],
+        "correctAnswer": "Venus"
+      },
+      {
+        "id": 12,
+        "question": "Which country is known as the Land of the Rising Sun?",
+        "options": [
+          "China",
+          "Japan",
+          "Thailand",
+          "Vietnam"
+        ],
+        "correctAnswer": "Japan"
+      },
+      {
+        "id": 13,
+        "question": "What is the main ingredient in guacamole?",
+        "options": [
+          "Tomato",
+          "Avocado",
+          "Onion",
+          "Lettuce"
+        ],
+        "correctAnswer": "Avocado"
+      },
+      {
+        "id": 14,
+        "question": "Which is the tallest mountain in the world?",
+        "options": [
+          "K2",
+          "Kangchenjunga",
+          "Mount Everest",
+          "Lhotse"
+        ],
+        "correctAnswer": "Mount Everest"
+      },
+      {
+        "id": 15,
+        "question": "What is the hardest natural substance on Earth?",
+        "options": [
+          "Gold",
+          "Iron",
+          "Diamond",
+          "Platinum"
+        ],
+        "correctAnswer": "Diamond"
+      },
+      {
+        "id": 16,
+        "question": "Which ocean is the smallest in the world?",
+        "options": [
+          "Indian Ocean",
+          "Arctic Ocean",
+          "Atlantic Ocean",
+          "Southern Ocean"
+        ],
+        "correctAnswer": "Arctic Ocean"
+      },
+      {
+        "id": 17,
+        "question": "Which is the national bird of the United States?",
+        "options": [
+          "Bald Eagle",
+          "Golden Eagle",
+          "Peregrine Falcon",
+          "Osprey"
+        ],
+        "correctAnswer": "Bald Eagle"
+      },
+      {
+        "id": 18,
+        "question": "Who was the first President of the United States?",
+        "options": [
+          "Abraham Lincoln",
+          "Thomas Jefferson",
+          "George Washington",
+          "John Adams"
+        ],
+        "correctAnswer": "George Washington"
+      },
+      {
+        "id": 19,
+        "question": "Which is the largest land animal?",
+        "options": [
+          "Elephant",
+          "Hippopotamus",
+          "Rhinoceros",
+          "Giraffe"
+        ],
+        "correctAnswer": "Elephant"
+      },
+      {
+        "id": 20,
+        "question": "What is the largest planet in our solar system?",
+        "options": [
+          "Earth",
+          "Saturn",
+          "Jupiter",
+          "Uranus"
+        ],
+        "correctAnswer": "Jupiter"
+      }
+    ]
+  }
+  
