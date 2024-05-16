@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import quizData from '../QuizBank/class4_quiz.json';
-import '../styles/Quiz.css'; // Import the CSS file for styling
+import quizData from '../../../QuizBank/class4_quiz.json';
+import '../../../styles/Quiz.css'; // Import the CSS file for styling
 
-const Quiz = () => {
+const QuizGKClassF = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState({});
-  const [timer, setTimer] = useState(0);
+  const [timer, setTimer] = useState(quizData.timeLimit);
   const [isQuizStarted, setIsQuizStarted] = useState(false); // New state to check if the quiz has started
   const navigate = useNavigate();
 
   useEffect(() => {
     setQuestions(quizData.questions);
-    setTimer(quizData.timeLimit);
   }, []);
 
   useEffect(() => {
@@ -98,4 +97,4 @@ const Quiz = () => {
   );
 };
 
-export default Quiz;
+export default QuizGKClassF;

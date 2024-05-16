@@ -1,15 +1,18 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Quiz from './components/Quiz';
+import Quiz from './components/quiz/class4/QuizGKClassF';
 import Result from './components/Result';
-import quizwizLogo from './assets/logo.webp'; // Import the logo
-import './App.css'; // Import the CSS file for styling
+import quizwizLogo from './assets/logo.webp';
+import NavigationBar from './components/NavigationBar';
+
+import './App.css';
 
 const App = () => {
   return (
     <div className="app-container">
       <Routes>
-        <Route path="/" element={
+        <Route path="/" element={ <NavigationBar /> } /> 
+        <Route path="/quiz" element={
           <div className="content-wrapper">
             <img src={quizwizLogo} alt="QuizWiz Logo" className="logo" />
             <Quiz />
@@ -18,7 +21,8 @@ const App = () => {
         <Route path="/result" element={<Result />} />
       </Routes>
     </div>
-  );
-};
+  )
+}
 
 export default App;
+
