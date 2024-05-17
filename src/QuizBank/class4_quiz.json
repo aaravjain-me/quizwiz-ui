@@ -3,28 +3,154 @@
   "timeLimit": 300,
   "questions": [
     {
-      "id": 151,
-      "question": "Where were the 2022 olampics held",
-      "options": ["Bejing, China", "Delhi, India", "New york, United States of America", "Moskow, Russia"],
-      "correctAnswer": "Bejing, China"
+      "id": 156,
+      "question": "What is the capital of Egypt?",
+      "options": ["Cairo", "Alexandria", "Luxor", "Aswan"],
+      "correctAnswer": "Cairo"
     },
     {
-      "id": 152,
-      "question": "What is Earth's closest star",
-      "options": ["Alpha Santuiry", "Alpha Santuiry A", "Proxima Santuiry", "Sun"],
-      "correctAnswer": "Sun"
+      "id": 157,
+      "question": "Who developed the theory of relativity?",
+      "options": ["Isaac Newton", "Galileo Galilei", "Albert Einstein", "Nikola Tesla"],
+      "correctAnswer": "Albert Einstein"
     },
     {
-      "id": 153,
-      "question":"Who painted Mona lisa",
-      "options": ["Leonardo 'da vinci", "Johannes Gutenberg", "Charles babage"],
-      "correctAnswer": "Leornado 'da vini"
+      "id": 158,
+      "question": "What is the main ingredient in bread?",
+      "options": ["Flour", "Sugar", "Salt", "Butter"],
+      "correctAnswer": "Flour"
     },
     {
-      "id":154,
-      "question":"What is the capital of Japan",
-      "options":["Islamabad", "Rome", "Athens", "Tokyo"],
-      "correctAnswer":"Tokyo"
+      "id": 159,
+      "question": "Which country is the largest by area?",
+      "options": ["Canada", "Russia", "China", "United States"],
+      "correctAnswer": "Russia"
+    },
+    {
+      "id": 160,
+      "question": "What is the smallest prime number?",
+      "options": ["0", "1", "2", "3"],
+      "correctAnswer": "2"
+    },
+    {
+      "id": 161,
+      "question": "What is the capital city of Australia?",
+      "options": ["Sydney", "Melbourne", "Brisbane", "Canberra"],
+      "correctAnswer": "Canberra"
+    },
+    {
+      "id": 162,
+      "question": "Which organ is responsible for pumping blood in the human body?",
+      "options": ["Lungs", "Liver", "Heart", "Kidneys"],
+      "correctAnswer": "Heart"
+    },
+    {
+      "id": 163,
+      "question": "Who wrote 'Romeo and Juliet'?",
+      "options": ["Charles Dickens", "Jane Austen", "William Shakespeare", "Mark Twain"],
+      "correctAnswer": "William Shakespeare"
+    },
+    {
+      "id": 164,
+      "question": "Which planet is closest to the Sun?",
+      "options": ["Venus", "Earth", "Mercury", "Mars"],
+      "correctAnswer": "Mercury"
+    },
+    {
+      "id": 165,
+      "question": "Which element has the chemical symbol 'O'?",
+      "options": ["Oxygen", "Gold", "Silver", "Iron"],
+      "correctAnswer": "Oxygen"
+    },
+    {
+      "id": 166,
+      "question": "Who invented the light bulb?",
+      "options": ["Nikola Tesla", "Alexander Graham Bell", "Thomas Edison", "Albert Einstein"],
+      "correctAnswer": "Thomas Edison"
+    },
+    {
+      "id": 167,
+      "question": "Which country is known for the Great Wall?",
+      "options": ["Japan", "China", "India", "Egypt"],
+      "correctAnswer": "China"
+    },
+    {
+      "id": 168,
+      "question": "What is the largest mammal?",
+      "options": ["Elephant", "Blue Whale", "Giraffe", "Rhino"],
+      "correctAnswer": "Blue Whale"
+    },
+    {
+      "id": 169,
+      "question": "What is the currency of Japan?",
+      "options": ["Yuan", "Won", "Yen", "Ringgit"],
+      "correctAnswer": "Yen"
+    },
+    {
+      "id": 170,
+      "question": "Who discovered penicillin?",
+      "options": ["Marie Curie", "Isaac Newton", "Alexander Fleming", "Louis Pasteur"],
+      "correctAnswer": "Alexander Fleming"
+    },
+    {
+      "id": 171,
+      "question": "Which country is the Eiffel Tower located in?",
+      "options": ["Italy", "Spain", "France", "Germany"],
+      "correctAnswer": "France"
+    },
+    {
+      "id": 172,
+      "question": "What is the hardest substance in the human body?",
+      "options": ["Bone", "Tooth enamel", "Hair", "Nail"],
+      "correctAnswer": "Tooth enamel"
+    },
+    {
+      "id": 173,
+      "question": "Which planet has the most moons?",
+      "options": ["Earth", "Mars", "Jupiter", "Saturn"],
+      "correctAnswer": "Jupiter"
+    },
+    {
+      "id": 174,
+      "question": "What is the main language spoken in Brazil?",
+      "options": ["Spanish", "French", "Portuguese", "English"],
+      "correctAnswer": "Portuguese"
+    },
+    {
+      "id": 175,
+      "question": "What is the tallest building in the world?",
+      "options": ["Shanghai Tower", "Burj Khalifa", "Abraj Al Bait", "One World Trade Center"],
+      "correctAnswer": "Burj Khalifa"
+    },
+    {
+      "id": 176,
+      "question": "Which continent is known as the 'Dark Continent'?",
+      "options": ["Asia", "Africa", "Europe", "Australia"],
+      "correctAnswer": "Africa"
+    },
+    {
+      "id": 177,
+      "question": "What is the chemical symbol for gold?",
+      "options": ["Au", "Ag", "Gd", "Pb"],
+      "correctAnswer": "Au"
+    },
+    {
+      "id": 178,
+      "question": "Which country is the largest producer of coffee?",
+      "options": ["Colombia", "Vietnam", "Ethiopia", "Brazil"],
+      "correctAnswer": "Brazil"
+    },
+    {
+      "id": 179,
+      "question": "What is the national animal of Canada?",
+      "options": ["Moose", "Beaver", "Bear", "Eagle"],
+      "correctAnswer": "Beaver"
+    },
+    {
+      "id": 180,
+      "question": "Who was the first man to walk on the moon?",
+      "options": ["Yuri Gagarin", "Buzz Aldrin", "Neil Armstrong", "Michael Collins"],
+      "correctAnswer": "Neil Armstrong"
     }
   ]
 }
