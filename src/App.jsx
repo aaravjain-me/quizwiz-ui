@@ -5,6 +5,7 @@ import Result from './components/Result';
 import quizwizLogo from './assets/logo.webp';
 import NavigationBar from './components/NavigationBar';
 import Login from './components/Login';
+import Message from './components/Message';
 import './App.css';
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
           </div>
         } />
         <Route path="/result" element={<Result />} />
+        <Route path="/message" element={ <Message /> } />
       </Routes>
     </div>
   )
