@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import quizwizLogo from "../assets/logo.webp";
 import "../styles/Login.css";
-import axios from "axios";
 
 const Login = () => {
     const [formSubmited, setFormSubmited] = useState(false);
@@ -12,7 +11,6 @@ const Login = () => {
     const navigate = useNavigate();
 
     const sendEmailTo = (address, message) => {
-        // Use axios to send data to backend
         
     }
 
@@ -28,6 +26,7 @@ const Login = () => {
     const login = (event) => {
         event.preventDefault();
         const emailValue = document.getElementById("email").value;
+        const passworValue = document.getElementById("password").value;
         const code = generateVerificationCode(6);
         setVerificationCode(code);
         setEmail(emailValue);
