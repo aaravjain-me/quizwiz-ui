@@ -1,0 +1,4 @@
+.help-container {
+    flex: 1; /* Allow this to grow and shrink as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+}

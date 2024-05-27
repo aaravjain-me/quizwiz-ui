@@ -6,13 +6,14 @@ import quizwizLogo from './assets/logo.webp';
 import NavigationBar from './components/NavigationBar';
 import Login from './components/Login';
 import Message from './components/Message';
+import Info from './components/Info';
 import './App.css';
 
 const App = () => {
   return (
     <div className="app-container">
       <Routes>
-        <Route path='/' element={ <Login /> } />
+        <Route path='/' element={<Login />} />
         <Route path="/home" element={
           <>
             <img src={quizwizLogo} alt="QuizWiz Logo" className="logo" /> 
@@ -26,10 +27,11 @@ const App = () => {
           </div>
         } />
         <Route path="/result" element={<Result />} />
-        <Route path="/message" element={ <Message /> } />
+        <Route path="/message" element={<Message timer={5} />} />
+        <Route path="/info/*" element={<Info />} />
       </Routes>
     </div>
-  )
+  );
 }
 
 export default App;

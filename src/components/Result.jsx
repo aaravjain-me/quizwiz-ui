@@ -7,16 +7,26 @@ const Result = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { score, totalQuestions, results } = location.state || {};
+  const [timer, setTimer] = React.useState(100);
 
   useEffect(() => {
     if (!location.state) {
-      navigate('/');
+      navigate('/home');
     }
   }, [location.state, navigate]);
 
   if (!location.state) {
     return null;
   }
+
+  useEffect(() => {
+    if (timer > 0) {
+        const timeoutId = setTimeout(() => setTimer(timer - 1), 1000);
+        return () => clearTimeout(timeoutId);  // Cleanup the timeout
+    } else {
+        navigate("/home");
+    }
+  }, [timer, navigate]);
 
   return (
     <div className="result-container">
@@ -32,6 +42,9 @@ const Result = () => {
             </div>
           ))}
         </div>
+        <p>
+          Redirecting to home page in {timer} seconds ...
+        </p>
       </div>
     </div>
   );

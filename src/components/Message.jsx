@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Message = () => {
-    const [timer, setTimer] = useState(5);
+const Message = (props) => {
+    const [timer, setTimer] = useState(props.timer);
     const navigate = useNavigate();
 
     useEffect(() => {
