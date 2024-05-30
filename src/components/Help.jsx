@@ -70,7 +70,7 @@ const Help = () => {
                     </ol>
                     <p>If you have any questions, feel free to email us at aaravjain.me@gmail.com.</p>
                 </div>
-                <Link to="/">Go back to the home page</Link>
+                <Link to="/home">Go back to the home page</Link>
             </div>
         </div>
     );

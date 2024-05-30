@@ -1,0 +1,97 @@
+.register-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    overflow-y: visible;
+}
+
+.logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+#type,
+#verification {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"],
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+
+button[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: #ff4d4f;
+    background-color: #ffeaea;
+    border: 1px solid #ff4d4f;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.selection select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.showPassword {
+    color: blue;
+    background-color: white;
+}
+
+.showPassword:hover {
+    background-color: white;
+}
