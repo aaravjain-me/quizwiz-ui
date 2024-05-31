@@ -3,6 +3,22 @@ import { Link } from "react-router-dom";
 import "../styles/Help.css";
 
 const Help = () => {
+    const questionAnswerData = [
+        { question: "How do I login?", answer: "Enter your email and password." },
+        { question: "How do I start a quiz?", answer: "Click on the class button in the navigation bar and select your class. Select the desired subject from the subject menu." },
+        { question: "How do I view my results?", answer: "Submit the quiz." }
+    ];
+
+    const steps = [
+        { title: "Login", description: "Enter your email and password." },
+        { title: "Select Class", description: "Click on the class button in the navigation bar and select your class. Select the desired subject from the subject menu." },
+        { title: "Enter your password", description: "Enter your password." },
+        { title: "Start Quiz", description: "Click on the start quiz button." },
+        { title: "Answer the questions in the quiz", description: "Answer the questions in the quiz." },
+        { title: "Submit Quiz", description: "Click on the submit button." },
+        { title: "View Results", description: "View your results." }
+    ];
+
     return (
         <div className="help-page">
             <div className="help-container">
@@ -10,9 +26,9 @@ const Help = () => {
                 <div>
                     <p>Here are some frequently asked questions:</p>
                     <ul>
-                        <li>How do I login?</li>
-                        <li>How do I start a quiz?</li>
-                        <li>How do I view my results?</li>
+                        {faqData.map((faq, index) => (
+                            <li key={index}>{faq.question}</li>
+                        ))}
                     </ul>
                     <p>The answers are in the table below:</p>
                     <table>
@@ -23,50 +39,22 @@ const Help = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>How do I login?</td>
-                                <td>Enter your email and password.</td>
-                            </tr>
-                            <tr>
-                                <td>How do I start a quiz?</td>
-                                <td>Click on the class button in the navigation bar and select your class. Select the desired subject from the subject menu.</td>
-                            </tr>
-                            <tr>
-                                <td>How do I view my results?</td>
-                                <td>Submit the quiz.</td>
-                            </tr>
+                            {questionAnswerData.map((questionAnswer, index) => (
+                                <tr key={index}>
+                                    <td>{questionAnswer.question}</td>
+                                    <td>{questionAnswer.answer}</td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                     <p>Here is a step-by-step guide on how to use QuizWiz:</p>
                     <ol>
-                        <li>
-                            <h2>Login</h2>
-                            <p>Enter your email and password.</p>
-                        </li>
-                        <li>
-                            <h2>Select Class</h2>
-                            <p>Click on the class button in the navigation bar and select your class. Select the desired subject from the subject menu.</p>
-                        </li>
-                        <li>
-                            <h2>Enter your password</h2>
-                            <p>Enter your password.</p>
-                        </li>
-                        <li>
-                            <h2>Start Quiz</h2>
-                            <p>Click on the start quiz button.</p>
-                        </li>
-                        <li>
-                            <h2>Answer the questions in the quiz</h2>
-                            <p>Answer the questions in the quiz.</p>
-                        </li>
-                        <li>
-                            <h2>Submit Quiz</h2>
-                            <p>Click on the submit button.</p>
-                        </li>
-                        <li>
-                            <h2>View Results</h2>
-                            <p>View your results.</p>
-                        </li>
+                        {steps.map((step, index) => (
+                            <li key={index}>
+                                <h2>{step.title}</h2>
+                                <p>{step.description}</p>
+                            </li>
+                        ))}
                     </ol>
                     <p>If you have any questions, feel free to email us at aaravjain.me@gmail.com.</p>
                 </div>
@@ -76,4 +64,5 @@ const Help = () => {
     );
 };
 
-export default Help;
+export default React.memo(Help);
+
