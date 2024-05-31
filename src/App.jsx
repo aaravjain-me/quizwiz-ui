@@ -7,13 +7,15 @@ import NavigationBar from './components/NavigationBar';
 import Register from './components/Register';
 import Message from './components/Message';
 import Info from './components/Info';
+import Login from './components/Login';
 import './App.css';
 
 const App = () => {
   return (
     <div className="app-container">
       <Routes>
-        <Route path='/' element={<Register />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/' element={<Login />} />
         <Route path="/home" element={
           <>
             <img src={quizwizLogo} alt="QuizWiz Logo" className="logo" /> 

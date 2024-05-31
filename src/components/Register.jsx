@@ -119,12 +119,10 @@ const Register = () => {
                                 required
                             />
                             <button
-                                type="button"
                                 className="showPassword"
+                                type="button"
                                 onClick={() => { setShowHide(showHide === "Show" ? "Hide" : "Show"); setType(type === "password" ? "text" : "password"); }}
-                            >
-                                {showHide} password
-                            </button>
+                            >{showHide} password</button>
                         </div>
                         <div>
                             <label htmlFor="type">Public or private:</label>
