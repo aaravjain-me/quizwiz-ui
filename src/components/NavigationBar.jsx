@@ -17,6 +17,7 @@ const NavigationBar = () => {
                 <button onClick={toggleDropdown}>Class</button>
                 <Link to="/info/about">About</Link>
                 <Link to="/info/help">Help</Link>
+                <Link to="/info/important-links">Important Links</Link>
             </div>
             {/* Show the content based on boolean values */}
             {dropdownVisible && (

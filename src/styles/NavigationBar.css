@@ -1,9 +1,27 @@
-.navigation {
-    align-self: start;
-}
-
-
-
+.navigation,
 .dropdown {
+    justify-self: start;
+    align-self: start;
+    display: inline-flex;
+}
+
+.navigation button,
+.dropdown button {
+    width: 25vw;
+    height: 10vh;
+    background-color: blue;
+    color: white;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+}
+
+.navigation button:hover,
+.dropdown button:hover {
+    background-color: white;
+    color: black;
+}
+
+.logo {
     align-self: start;
 }
+

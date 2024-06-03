@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import quizwizLogo from "../assets/logo.webp";
 import DatePicker from 'react-datepicker';
@@ -8,23 +8,27 @@ import 'react-datepicker/dist/react-datepicker.css';
 import isEmail from 'validator/lib/isEmail';
 
 const Register = () => {
+    const [formData, setFormData] = useState({
+        email: "",
+        password: "",
+        dob: null,
+        accountType: "",
+        username: ""
+    });
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [verificationCode, setVerificationCode] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [dob, setDob] = useState(null);
-    const [accountType, setAccountType] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState("");
     const [type, setType] = useState("password");
     const [showHide, setShowHide] = useState("Show");
-    const usernameRef = useRef(null);
     const verificationRef = useRef(null);
+    const [timer, setTimer] = useState(500);
 
     const navigate = useNavigate();
 
     const sendEmailTo = (address, message) => {
         // Email sending logic here
+        console.log(`Sending email to ${address}: ${message}`);
     };
 
     const generateVerificationCode = (length) => {
@@ -35,6 +39,20 @@ const Register = () => {
         }
         return code;
     };
+
+    useEffect(() => {
+        let intervalId;
+        if (formSubmitted && timer > 0) {
+            intervalId = setInterval(() => {
+                setTimer(prevTimer => prevTimer - 1);
+            }, 1000);
+        } else if (timer === 0) {
+            setFormSubmitted(false);
+            setTimer(500);
+        }
+
+        return () => clearInterval(intervalId);  // Cleanup the interval
+    }, [formSubmitted, timer]);
 
     const validatePassword = (password) => {
         const minLength = 8;
@@ -54,6 +72,8 @@ const Register = () => {
     const register = async (event) => {
         event.preventDefault();
         setError("");
+        const { email, password, dob, accountType, username } = formData;
+
         if (!isEmail(email)) {
             setError("Please enter a valid email address.");
             return;
@@ -64,14 +84,18 @@ const Register = () => {
         }
         const code = generateVerificationCode(6);
         const dobValue = dob ? moment(dob).format('YYYY-MM-DD') : '';
-        const username = usernameRef.current.value;
+
         setVerificationCode(code);
         setFormSubmitted(true);
         setIsLoading(true);
         try {
             console.log(`Email: ${email}, Password: ${password}, DOB: ${dobValue}, Account Type: ${accountType}, Username: ${username}`);
             console.log(`Verification code: ${code}`);
-            sendEmailTo(email, `${code}\nThe above code is the verification code for your registration into QuizWiz.\nThank you so much for visiting our website!`);
+            sendEmailTo(email, `Hello ${username}
+            \n
+            The verification code for your login into quizwiz is:   ${code}
+            \n
+            Thank you`);
             setIsLoading(false);
         } catch (error) {
             setError("Failed to send verification email. Please try again.");
@@ -89,82 +113,91 @@ const Register = () => {
         }
     };
 
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleDobChange = (date) => {
+        setFormData({ ...formData, dob: date });
+    };
+
     return (
         <div className="register-page">
             <img src={quizwizLogo} alt="Quizwiz Logo" className="logo" />
             <div className="form-container">
                 <form onSubmit={register}>
                     <div>
-                        <div>
-                            <label htmlFor="email">E-mail address:</label>
-                            <br />
-                            <input
-                                type="email"
-                                name="email"
-                                id="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                        <label htmlFor="email">E-mail address:</label>
+                        <br />
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="password">Password:</label>
+                        <br />
+                        <input
+                            type={type}
+                            name="password"
+                            id="password"
+                            value={formData.password}
+                            onChange={handleInputChange}
+                            required
+                        />
+                        <button
+                            className="showPassword"
+                            type="button"
+                            onClick={() => { setShowHide(showHide === "Show" ? "Hide" : "Show"); setType(type === "password" ? "text" : "password"); }}
+                        >{showHide} password</button>
+                    </div>
+                    <div>
+                        <label htmlFor="type">Public or private:</label>
+                        <div className="selection">
+                            <select
+                                id="type"
+                                name="accountType"
+                                value={formData.accountType}
+                                onChange={handleInputChange}
                                 required
-                            />
+                            >
+                                <option value="" disabled>Select an option</option>
+                                <option value="Public" title="Public: Anyone can see your account in the accounts, you can publish your own quiz">Public</option>
+                                <option value="Private" title="Private: To see your account users will have to enter your password, you can't publish your own quiz">Private</option>
+                            </select>
                         </div>
-                        <div>
-                            <label htmlFor="password">Password:</label>
-                            <br />
-                            <input
-                                type={type}
-                                name="password"
-                                id="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                            />
-                            <button
-                                className="showPassword"
-                                type="button"
-                                onClick={() => { setShowHide(showHide === "Show" ? "Hide" : "Show"); setType(type === "password" ? "text" : "password"); }}
-                            >{showHide} password</button>
-                        </div>
-                        <div>
-                            <label htmlFor="type">Public or private:</label>
-                            <div className="selection">
-                                <select
-                                    id="type"
-                                    value={accountType}
-                                    onChange={(e) => setAccountType(e.target.value)}
-                                    required
-                                >
-                                    <option value="" disabled>Select an option</option>
-                                    <option value="Public" title="Public: Anyone can see your account in the accounts, you can publish your own quiz">Public</option>
-                                    <option value="Private" title="Private: To see your account users will have to enter your password, you can't publish your own quiz">Private</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div>
-                            <label htmlFor="dob">Date of Birth:</label>
-                            <br />
-                            <DatePicker
-                                selected={dob}
-                                onChange={(date) => setDob(date)}
-                                dateFormat="MMMM d, yyyy"
-                                placeholderText="Select your date of birth"
-                                maxDate={new Date()}
-                                showYearDropdown
-                                scrollableYearDropdown
-                                yearDropdownItemNumber={100}
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="username">Enter username:</label>
-                            <br />
-                            <input
-                                type="text"
-                                name="username"
-                                id="username"
-                                ref={usernameRef}
-                                required
-                            />
-                        </div>
+                    </div>
+                    <div>
+                        <label htmlFor="dob">Date of Birth:</label>
+                        <br />
+                        <DatePicker
+                            selected={formData.dob}
+                            onChange={handleDobChange}
+                            dateFormat="MMMM d, yyyy"
+                            placeholderText="Select your date of birth"
+                            maxDate={new Date()}
+                            showYearDropdown
+                            scrollableYearDropdown
+                            yearDropdownItemNumber={100}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="username">Enter username:</label>
+                        <br />
+                        <input
+                            type="text"
+                            name="username"
+                            id="username"
+                            value={formData.username}
+                            onChange={handleInputChange}
+                            required
+                        />
                     </div>
                     <button type="submit" disabled={isLoading}>
                         {isLoading ? 'Creating account...' : 'Create account'}
@@ -174,6 +207,8 @@ const Register = () => {
             </div>
             {formSubmitted && !isLoading && (
                 <>
+                    <p>Verification code has been sent to your email. Please check your inbox.</p>
+                    <p>Verification code will expire in {timer} seconds.</p>
                     <label htmlFor="verification">Enter your verification code here:</label>
                     <br />
                     <input
@@ -193,3 +228,4 @@ const Register = () => {
 };
 
 export default Register;
+

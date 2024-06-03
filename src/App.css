@@ -31,4 +31,8 @@ html, body {
       width: 150px;
     }
   }
+
+.app-container a{
+  margin: 10px;
+}
   

@@ -3,11 +3,11 @@ import { Route, Routes } from 'react-router-dom';
 import Quiz from './components/quiz/class4/QuizGKClassF';
 import Result from './components/Result';
 import quizwizLogo from './assets/logo.webp';
-import NavigationBar from './components/NavigationBar';
 import Register from './components/Register';
 import Message from './components/Message';
 import Info from './components/Info';
 import Login from './components/Login';
+import Home from './components/Home';
 import './App.css';
 
 const App = () => {
@@ -18,8 +18,7 @@ const App = () => {
         <Route path='/' element={<Login />} />
         <Route path="/home" element={
           <>
-            <img src={quizwizLogo} alt="QuizWiz Logo" className="logo" /> 
-            <NavigationBar />
+            <Home />
           </> 
         } /> 
         <Route path="/quiz" element={

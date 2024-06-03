@@ -26,8 +26,8 @@ const Help = () => {
                 <div>
                     <p>Here are some frequently asked questions:</p>
                     <ul>
-                        {faqData.map((faq, index) => (
-                            <li key={index}>{faq.question}</li>
+                        {questionAnswerData.map((questionAnswer, index) => (
+                            <li key={index}>{questionAnswer.question}</li>
                         ))}
                     </ul>
                     <p>The answers are in the table below:</p>
