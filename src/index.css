@@ -30,3 +30,7 @@ input {
   border: 2px;
   border-color: black;
 } */
+
+label {
+  cursor: inherit;
+}

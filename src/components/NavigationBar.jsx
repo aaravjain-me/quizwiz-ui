@@ -3,7 +3,7 @@ import "../styles/NavigationBar.css";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
 
-const NavigationBar = () => {
+const NavigationBar = ({username}) => {
     // Use hook to manage dropdowns
     const [dropdownVisible, setDropdownVisible] = React.useState(false);
 
@@ -29,4 +29,4 @@ const NavigationBar = () => {
     )
 }
 
-export default NavigationBar;
+export default React.memo(NavigationBar);

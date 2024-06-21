@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Message = (props) => {
     const [timer, setTimer] = useState(props.timer);
     const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         if (timer > 0) {
             const timeoutId = setTimeout(() => setTimer(timer - 1), 1000);
             return () => clearTimeout(timeoutId);  // Cleanup the timeout
         } else {
-            navigate("/home");
+            navigate("/home", {
+                state: location.state
+            });
         }
-    }, [timer, navigate]);
+    }, [timer, navigate, location.state]);
 
     return (
         <p>

@@ -8,6 +8,7 @@ import Message from './components/Message';
 import Info from './components/Info';
 import Login from './components/Login';
 import Home from './components/Home';
+import Accounts from './components/Accounts';
 import './App.css';
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/result" element={<Result />} />
         <Route path="/message" element={<Message timer={5} />} />
         <Route path="/info/*" element={<Info />} />
+        <Route path='/accounts' element={<Accounts />} />
       </Routes>
     </div>
   );

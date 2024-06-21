@@ -6,11 +6,13 @@ import moment from 'moment';
 import "../styles/Register.css";
 import 'react-datepicker/dist/react-datepicker.css';
 import isEmail from 'validator/lib/isEmail';
+import { fetchData } from "../functionalities/data";
 
 const Register = () => {
     const [formData, setFormData] = useState({
         email: "",
         password: "",
+        age: null,
         dob: null,
         accountType: "",
         username: ""
@@ -25,11 +27,6 @@ const Register = () => {
     const [timer, setTimer] = useState(500);
 
     const navigate = useNavigate();
-
-    const sendEmailTo = (address, message) => {
-        // Email sending logic here
-        console.log(`Sending email to ${address}: ${message}`);
-    };
 
     const generateVerificationCode = (length) => {
         const characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -51,8 +48,14 @@ const Register = () => {
             setTimer(500);
         }
 
-        return () => clearInterval(intervalId);  // Cleanup the interval
+        return () => clearInterval(intervalId);
     }, [formSubmitted, timer]);
+
+    const calculateAge = (dob) => {
+        const diffMs = Date.now() - dob.getTime();
+        const ageDt = new Date(diffMs);
+        return Math.abs(ageDt.getUTCFullYear() - 1970);
+    };
 
     const validatePassword = (password) => {
         const minLength = 8;
@@ -89,24 +92,23 @@ const Register = () => {
         setFormSubmitted(true);
         setIsLoading(true);
         try {
-            console.log(`Email: ${email}, Password: ${password}, DOB: ${dobValue}, Account Type: ${accountType}, Username: ${username}`);
-            console.log(`Verification code: ${code}`);
-            sendEmailTo(email, `Hello ${username}
-            \n
-            The verification code for your login into quizwiz is:   ${code}
-            \n
-            Thank you`);
+            await fetchData({
+                code: code,
+                formData: formData
+            }, "http://localhost:5000/data/register");
             setIsLoading(false);
         } catch (error) {
             setError("Failed to send verification email. Please try again.");
             setIsLoading(false);
-        }
+        };
     };
 
     const verifyCode = () => {
         const code = verificationRef.current.value;
         if (verificationCode === code) {
-            navigate("/message");
+            navigate("/message", {state: {
+                username: formData.username
+            }});
         } else {
             alert("Verification failed, please try again.");
             setFormSubmitted(false);
@@ -119,7 +121,8 @@ const Register = () => {
     };
 
     const handleDobChange = (date) => {
-        setFormData({ ...formData, dob: date });
+        const age = calculateAge(date);
+        setFormData({ ...formData, dob: date, age });
     };
 
     return (
@@ -207,7 +210,7 @@ const Register = () => {
             </div>
             {formSubmitted && !isLoading && (
                 <>
-                    <p>Verification code has been sent to your email. Please check your inbox.</p>
+                    <p>Your verification code: {verificationCode}. (Email feature not implemented)</p>
                     <p>Verification code will expire in {timer} seconds.</p>
                     <label htmlFor="verification">Enter your verification code here:</label>
                     <br />
@@ -228,4 +231,5 @@ const Register = () => {
 };
 
 export default Register;
+
 

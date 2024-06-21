@@ -14,7 +14,7 @@ const subjects = [
     ["Math", "Computers", "English", "General knowledge", "Phisycs", "Chemistry", "Biology", "Programming", "Sivics", "History", "Geography", "Robotics"]
 ];
 
-const Dropdown = () => {
+const Dropdown = ({username}) => {
     const [activeMenu, setActiveMenu] = useState(null);
 
     const toggleSubjectMenu = (index) => {
@@ -29,7 +29,7 @@ const Dropdown = () => {
                     {activeMenu === index && (
                         <div className={`ss${index + 1}`}>
                             {subjectList.map((subject, subIndex) => (
-                                <Link key={subIndex} to={`/quiz/class${index + 1}/${subject}`}>{subject}</Link>
+                                <Link key={subIndex} to={`/quiz/class${index + 1}/${subject}`} state={{username: username}}>{subject}</Link>
                             ))}
                         </div>
                     )}
@@ -39,4 +39,4 @@ const Dropdown = () => {
     );
 };
 
-export default Dropdown;
+export default React.memo(Dropdown);
