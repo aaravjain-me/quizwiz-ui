@@ -46,6 +46,11 @@
     margin-top: 10px;
 }
 
+.login-form button:disabled {
+    cursor: wait;
+}
+
+
 .showPassword {
     background: none;
     border: none;

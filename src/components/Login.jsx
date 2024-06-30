@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "../styles/Login.css";
 import { useNavigate, Link } from "react-router-dom";
 import Tooltip from "./Tooltip";
@@ -6,6 +6,7 @@ import { fetchData } from "../functionalities/data";
 
 const Login = () => {
     const navigate = useNavigate();
+    const passwordRef = useRef(null); // Step 2: Create a reference for the password input field
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
@@ -28,7 +29,7 @@ const Login = () => {
             if (response.error) {
                 setError(response.error);
             } else {
-                navigate("/home", {state: {
+                navigate("/home", { state: {
                     username: username,
                     email: email,
                     type: response.type
@@ -39,6 +40,18 @@ const Login = () => {
         } finally {
             setIsLoading(false);
         }
+    };
+
+    const togglePasswordVisibility = () => {
+        const passwordField = passwordRef.current;
+        const start = passwordField.selectionStart;
+        const end = passwordField.selectionEnd;
+        setShowHide(showHide === "Show" ? "Hide" : "Show");
+        setType(type === "password" ? "text" : "password");
+        setTimeout(() => {
+            passwordField.focus();
+            passwordField.setSelectionRange(start, end);
+        }, 0);
     };
 
     return (
@@ -70,14 +83,12 @@ const Login = () => {
                                     value={password} 
                                     onChange={(e) => setPassword(e.target.value)} 
                                     required 
+                                    ref={passwordRef} // Step 2: Attach the reference to the password input field
                                 />
                                 <button 
                                     className="showPassword" 
                                     type="button" 
-                                    onClick={() => {
-                                        setShowHide(showHide === "Show" ? "Hide" : "Show");
-                                        setType(type === "password" ? "text" : "password");
-                                    }}
+                                    onClick={togglePasswordVisibility} // Step 3 & 4: Call the toggle function
                                 >
                                     {showHide} password
                                 </button>

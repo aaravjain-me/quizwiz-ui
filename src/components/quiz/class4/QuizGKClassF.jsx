@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { functionalities } from '../../../functionalities/FuncionalityConsts';
 import quizData from '../../../QuizBank/class4_quiz.json';
 import '../../../styles/Quiz.css'; // Import the CSS file for styling
 import { fetchData } from '../../../functionalities/data';
@@ -10,9 +10,8 @@ const QuizGKClassF = () => {
   const [answers, setAnswers] = useState({});
   const [timer, setTimer] = useState(quizData.timeLimit);
   const [isQuizStarted, setIsQuizStarted] = useState(false);
-  const [submiting, setSubmiting] = useState(false)
-  const navigate = useNavigate();
-  const location = useLocation();
+  const [submitting, setSubmitting] = useState(false);
+  const { navigate, location } = functionalities; // Corrected the spread operator usage
 
   useEffect(() => {
     setQuestions(quizData.questions);
@@ -47,6 +46,7 @@ const QuizGKClassF = () => {
 
   const handleSubmit = async () => {
     let score = 0;
+    setSubmitting(true);
     const results = questions.map((question) => {
       const userAnswer = answers[question.id];
       const correctAnswer = question.correctAnswer;
@@ -103,7 +103,7 @@ const QuizGKClassF = () => {
               {currentQuestionIndex < questions.length - 1 ? (
                 <button onClick={handleNext}>Next</button>
               ) : (
-                <button onClick={handleSubmit} disabled={!isQuizStarted || submiting}>{submiting ? "Submitting" : "Submit"}</button>
+                <button onClick={handleSubmit} disabled={!isQuizStarted || submitting}>{submitting ? "Submitting" : "Submit"}</button>
               )}
             </div>
           </div>
@@ -114,3 +114,4 @@ const QuizGKClassF = () => {
 };
 
 export default QuizGKClassF;
+

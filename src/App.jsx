@@ -9,6 +9,7 @@ import Info from './components/Info';
 import Login from './components/Login';
 import Home from './components/Home';
 import Accounts from './components/Accounts';
+import CreateQuiz from './components/CreateQuiz';
 import './App.css';
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/message" element={<Message timer={5} />} />
         <Route path="/info/*" element={<Info />} />
         <Route path='/accounts' element={<Accounts />} />
+        <Route path='/create-quiz' element={<CreateQuiz />} />
       </Routes>
     </div>
   );

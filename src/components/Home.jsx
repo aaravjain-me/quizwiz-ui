@@ -1,12 +1,17 @@
 import React from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import NavigationBar from "./NavigationBar";
 import quizwizLogo from "../assets/logo.webp";
-import { useLocation } from "react-router-dom";
 import "../styles/Home.css";
 
 const Home = () => {
+    const navigate = useNavigate();
     const location = useLocation();
     const { state } = location;
+
+    const createQuiz = () => {
+        navigate('/create-quiz');
+    }
 
     return (
         <>
@@ -20,9 +25,11 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <button className="btn-create-quiz" onClick={createQuiz}>Create your own quiz</button>
             <NavigationBar username={state?.username || "User"}/>
         </>
     );
 }
 
 export default Home;
+
