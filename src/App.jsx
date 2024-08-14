@@ -9,35 +9,32 @@ import Info from './components/Info';
 import Login from './components/Login';
 import Home from './components/Home';
 import Accounts from './components/Accounts';
-import CreateQuiz from './components/CreateQuiz';
+import Error from './components/Error';
+import Status from './components/Status';
 import './App.css';
 
 const App = () => {
   return (
     <div className="app-container">
       <Routes>
+        <Route path='/error' element={<Error />} />
         <Route path='/register' element={<Register />} />
         <Route path='/' element={<Login />} />
-        <Route path="/home" element={
-          <>
-            <Home />
-          </> 
-        } /> 
-        <Route path="/quiz" element={
+        <Route path="/home" element={<Home />} /> 
+        <Route path="/quiz/:class/:subject" element={
           <div className="content-wrapper">
             <img src={quizwizLogo} alt="QuizWiz Logo" className="logo" />
             <Quiz />
           </div>
         } />
+        <Route path='/status' element={<Status />} />
         <Route path="/result" element={<Result />} />
         <Route path="/message" element={<Message timer={5} />} />
         <Route path="/info/*" element={<Info />} />
         <Route path='/accounts' element={<Accounts />} />
-        <Route path='/create-quiz' element={<CreateQuiz />} />
       </Routes>
     </div>
   );
 }
 
 export default App;
-

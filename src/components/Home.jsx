@@ -25,7 +25,6 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <button className="btn-create-quiz" onClick={createQuiz}>Create your own quiz</button>
             <NavigationBar username={state?.username || "User"}/>
         </>
     );

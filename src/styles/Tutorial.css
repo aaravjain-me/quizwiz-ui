@@ -1,0 +1,56 @@
+/* Tutorial.css */
+
+.tutorial-page {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tutorial-page h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.tutorial-page ol {
+    padding-left: 20px;
+}
+
+.tutorial-page li {
+    margin-bottom: 20px;
+}
+
+.tutorial-page h2 {
+    color: auto;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.tutorial-page p {
+    color: #555;
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .tutorial-page {
+        padding: 10px;
+    }
+
+    .tutorial-page h1 {
+        font-size: 1.5em;
+    }
+
+    .tutorial-page h2 {
+        font-size: 1.2em;
+    }
+
+    .tutorial-page p {
+        font-size: 0.9em;
+    }
+}

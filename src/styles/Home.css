@@ -1,15 +1,51 @@
-.whats-new {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 2px;
-  border-color: black;
-  background-color: lightgreen;
+/* Home.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.logo {
+  display: block;
+  margin: 20px auto;
+  width: 150px;
 }
 
 .content-wrapper {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
+  margin: 20px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+.whats-new {
+  margin-top: 20px;
+}
+
+.whats-new h2 {
+  font-size: 1.5em;
+}
+
+.whats-new p {
+  font-size: 1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logo {
+      width: 100px;
+  }
+
+  h1 {
+      font-size: 1.5em;
+  }
+
+  .whats-new h2 {
+      font-size: 1.2em;
+  }
+
+  .whats-new p {
+      font-size: 0.9em;
+  }
 }

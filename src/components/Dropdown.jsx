@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "../styles/Dropdown.css";
 
 const subjects = [
-    ["Math", "Science", "Computers", "English", "General knowledge"],
-    ["Math", "Science", "Computers", "English", "General knowledge", "Programming"],
-    ["Math", "Science", "Computers", "English", "General knowledge", "Programming", "Social Science"],
-    ["Math", "Science", "Computers", "English", "General knowledge", "Programming", "Social Science", "Robotics"],
-    ["Math", "Science", "Computers", "English", "General knowledge", "Programming", "Social Science", "Robotics"],
-    ["Math", "Phisycs", "Chemistry", "Biology", "Computers", "English", "General knowledge", "Programming", "Sivics", "History", "Geography", "Robotics"],
-    ["Math", "Computers", "English", "General knowledge", "Phisycs", "Chemistry", "Biology", "Programming", "Sivics", "History", "Geography", "Robotics"],
-    ["Math", "Computers", "English", "General knowledge", "Phisycs", "Chemistry", "Biology", "Programming", "Sivics", "History", "Geography", "Robotics"],
-    ["Math", "Computers", "English", "General knowledge", "Phisycs", "Chemistry", "Biology", "Programming", "Sivics", "History", "Geography", "Robotics"],
-    ["Math", "Computers", "English", "General knowledge", "Phisycs", "Chemistry", "Biology", "Programming", "Sivics", "History", "Geography", "Robotics"]
+    ["Math", "Science", "English", "General knowledge"],
+    ["Math", "Science", "English", "General knowledge"],
+    ["Math", "Science", "English", "General knowledge"],
+    ["Math", "Science", "English", "General knowledge"],
+    ["Math", "Science", "English", "General knowledge"],
+    ["Math", "Physics", "Chemistry", "Biology", "English", "General knowledge"],
+    ["Math", "English", "General knowledge", "Physics", "Chemistry", "Biology"],
+    ["Math", "English", "General knowledge"],
+    ["Math", "English", "General knowledge"],
+    ["Math", "English", "General knowledge"]
 ];
 
-const Dropdown = ({username}) => {
+const Dropdown = ({ username }) => {
     const [activeMenu, setActiveMenu] = useState(null);
 
     const toggleSubjectMenu = (index) => {
@@ -22,20 +23,22 @@ const Dropdown = ({username}) => {
     };
 
     return (
-        <div>
+        <span className="dropdown-container">
             {subjects.map((subjectList, index) => (
-                <div key={index}>
-                    <button onClick={() => toggleSubjectMenu(index)}>Class {index + 1}</button>
+                <span key={index}>
+                    <button className="button" onClick={() => toggleSubjectMenu(index)}>Class {index + 1}</button>
                     {activeMenu === index && (
-                        <div className={`ss${index + 1}`}>
+                        <span className="dropdown-menu">
                             {subjectList.map((subject, subIndex) => (
-                                <Link key={subIndex} to={`/quiz/class${index + 1}/${subject}`} state={{username: username}}>{subject}</Link>
+                                <Link key={subIndex} to={`/quiz/class ${index + 1}/${subject}`} state={{ username: username }}>
+                                    {subject}
+                                </Link>
                             ))}
-                        </div>
+                        </span>
                     )}
-                </div>
+                </span>
             ))}
-        </div>
+        </span>
     );
 };
 

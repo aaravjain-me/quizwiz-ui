@@ -1,21 +1,40 @@
 import React, { useState, useEffect } from 'react';
-import { functionalities } from '../../../functionalities/FuncionalityConsts';
-import quizData from '../../../QuizBank/class4_quiz.json';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import '../../../styles/Quiz.css'; // Import the CSS file for styling
 import { fetchData } from '../../../functionalities/data';
 
+const capitalize = (str) => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 const QuizGKClassF = () => {
+  const { class: className, subject } = useParams();
+  const navigate = useNavigate();
   const [questions, setQuestions] = useState([]);
+  const [quizTitle, setQuizTitle] = useState('');
+  const [timeLimit, setTimeLimit] = useState(300);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState({});
-  const [timer, setTimer] = useState(quizData.timeLimit);
+  const [timer, setTimer] = useState(timeLimit);
   const [isQuizStarted, setIsQuizStarted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
-  const { navigate, location } = functionalities; // Corrected the spread operator usage
+  const location = useLocation();
 
   useEffect(() => {
-    setQuestions(quizData.questions);
-  }, []);
+    const fetchQuizData = async () => {
+      try {
+        const data = await fetchData({ class: capitalize(className), subject }, 'http://localhost:5000/data/random-questions');
+        setQuestions(data.questions);
+        setQuizTitle(data.quizTitle);
+        setTimeLimit(data.timeLimit);
+        setTimer(data.timeLimit);
+      } catch (error) {
+        console.error('Error fetching quiz data:', error);
+      }
+    };
+
+    fetchQuizData();
+  }, [className, subject]);
 
   useEffect(() => {
     let interval;
@@ -61,25 +80,38 @@ const QuizGKClassF = () => {
     });
 
     try {
-      await fetchData({
-        username: "aaravjain-me",
-        resultType: 'quizwiz generated',
-        resultQuestions: questions.map(q => q.question),
-        resultCorrectAnswers: score,
-        resultWrongAnswers: questions.length - score,
-        resultAnswers: questions.length,
-      }, 'http://localhost:5000/data/quiz');
+      if (location.state) {
+        await fetchData({
+          username: location.state.username,
+          resultType: 'quizwiz generated',
+          resultQuestions: questions.map(q => q.question),
+          resultCorrectAnswers: score,
+          resultWrongAnswers: questions.length - score,
+          resultAnswers: questions.length,
+        }, 'http://localhost:5000/data/quiz');
+      } else {
+        await fetchData({
+          username: "Random user",
+          resultType: 'quizwiz generated',
+          resultQuestions: questions.map(q => q.question),
+          resultCorrectAnswers: score,
+          resultWrongAnswers: questions.length - score,
+          resultAnswers: questions.length,
+        }, 'http://localhost:5000/data/quiz');
+      }
 
       navigate('/result', { state: { score, totalQuestions: questions.length, results } });
     } catch (error) {
       console.error('Error submitting quiz results:', error);
+    } finally {
+      setSubmitting(false);
     }
   };
 
   return (
     <div className="quiz-container">
       <div className="quiz-content">
-        <h2>{quizData.quizTitle}</h2>
+        <h2>{quizTitle}</h2>
         <div className="timer">Time remaining: {timer} seconds</div>
         {questions.length > 0 && (
           <div>
@@ -90,11 +122,11 @@ const QuizGKClassF = () => {
                   <input
                     type="radio"
                     name={`question-${questions[currentQuestionIndex].id}`}
-                    value={option}
-                    checked={answers[questions[currentQuestionIndex].id] === option}
-                    onChange={() => handleAnswerChange(questions[currentQuestionIndex].id, option)}
+                    value={option.text}
+                    checked={answers[questions[currentQuestionIndex].id] === option.text}
+                    onChange={() => handleAnswerChange(questions[currentQuestionIndex].id, option.text)}
                   />
-                  <label>{option}</label>
+                  <label>{option.text}</label>
                 </div>
               ))}
             </div>
@@ -114,4 +146,3 @@ const QuizGKClassF = () => {
 };
 
 export default QuizGKClassF;
-

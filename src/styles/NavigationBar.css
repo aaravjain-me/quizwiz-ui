@@ -1,27 +1,71 @@
-.navigation,
-.dropdown {
-    justify-self: start;
-    align-self: start;
-    display: inline-flex;
-}
-
-.navigation button,
-.dropdown button {
-    width: 25vw;
-    height: 10vh;
-    background-color: blue;
+/* NavigationBar.css */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
     color: white;
-    margin-left: 0.5vw;
-    margin-right: 0.5vw;
+    position: relative;
 }
 
-.navigation button:hover,
-.dropdown button:hover {
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger-menu div {
+    width: 25px;
+    height: 3px;
     background-color: white;
-    color: black;
+    margin: 4px 0;
 }
 
-.logo {
-    align-self: start;
+.navigation-links {
+    display: flex;
+    gap: 15px;
 }
 
+.navigation-links a,
+.navigation-links .button {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.navigation-links a:hover,
+.navigation-links .button:hover {
+    background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+
+    .navigation-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        z-index: 1;
+    }
+
+    .navigation-links.active {
+        display: flex;
+    }
+
+    .navigation-links a,
+    .navigation-links .button {
+        padding: 10px 20px;
+        text-align: center;
+    }
+}

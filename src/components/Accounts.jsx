@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { fetchData } from "../functionalities/data";
 import "../styles/Accounts.css";
 
 const Accounts = () => {
-    const [message, setMessage] = React.useState("Start typing to see accounts");
-    const [accounts, setAccounts] = React.useState([]);
-    const [searchWindow, setSearchWindow] = React.useState("");
-    const [loading, setLoading] = React.useState(false);
+    const [message, setMessage] = useState("Start typing to see accounts");
+    const [accounts, setAccounts] = useState([]);
+    const [searchWindow, setSearchWindow] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const debounce = (func, delay) => {
         let debounceTimer;
@@ -27,13 +27,17 @@ const Accounts = () => {
             return;
         }
         setLoading(true);
-        var response = await fetchData({
-            typedString: value
-        }, "http://localhost:5000/data/accounts");
-        setAccounts(response.accounts);
-        setLoading(false);
-        if (response.accounts.length === 0) {
-            setMessage("No accounts found");
+        try {
+            const response = await fetchData({ typedString: value }, "http://localhost:5000/data/accounts");
+            setAccounts(response.accounts);
+            setLoading(false);
+            if (response.accounts.length === 0) {
+                setMessage("No accounts found");
+            }
+        } catch (error) {
+            setLoading(false);
+            setMessage("Error fetching accounts");
+            console.error("Error fetching accounts:", error);
         }
     };
 
@@ -42,13 +46,11 @@ const Accounts = () => {
     return (
         <div className="accounts-page">
             <div className="search-window">
-                <input type="text" onChange={debouncedHandleSearchWindowChange} />
+                <input type="text" onChange={debouncedHandleSearchWindowChange} placeholder="Search accounts..." />
             </div>
             <div className="accounts-list">
                 {loading ? (
-                    <div className="message">
-                        Fetching accounts...
-                    </div>
+                    <div className="message">Fetching accounts...</div>
                 ) : accounts.length > 0 ? (
                     accounts.map((account, index) => (
                         <div key={index} className="account-item">
@@ -58,9 +60,7 @@ const Accounts = () => {
                         </div>
                     ))
                 ) : (
-                    <div className="message">
-                        {message}
-                    </div>
+                    <div className="message">{message}</div>
                 )}
             </div>
         </div>
@@ -68,4 +68,3 @@ const Accounts = () => {
 };
 
 export default Accounts;
-
